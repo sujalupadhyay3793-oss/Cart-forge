@@ -1,14 +1,13 @@
 pipeline {
     agent { 
-        label 'node'
+        label 'node' 
     }
-    tools {
+    tools{
         nodejs 'npm'
     }
     environment {
-        Name = "Mantasha"
+        name = 'sujal'
     }
-
     stages {
         stage('clone') {
             steps {
@@ -16,13 +15,13 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mantu0tech/weather_app_node_js.git'
             }
         }
-         stage('build') {
+        stage('deploy') {
             steps {
                 echo 'Hello World'
                 sh 'npm i'
             }
         }
-         stage('deplyo') {
+        stage('build') {
             steps {
                 echo 'Hello World'
                 sh 'npm start'
